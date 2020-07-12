@@ -1,8 +1,6 @@
 <?php
 
-$n = 8;
-$s = ['U', 'D', 'D', 'D', 'U', 'D', 'U', 'U'];
-
+// Complete the countingValleys function below.
 function countingValleys($n, $s)
 {
     $entered_count = 0;
@@ -21,9 +19,9 @@ function countingValleys($n, $s)
 
         if ($check) {
             $current_position--;
-            if ($current_position == -2) {
-                if ($previous_position == -1) {
-                    $current_position--;
+            if ($current_position == -2 && $s[$i - 1] != 'U') {
+                if ($previous_position == -1 && $s[$i - 1] != 'U') {
+                    // $current_position--;
                     $entered_count++;
                 }
             }
